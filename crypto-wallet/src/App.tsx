@@ -1,13 +1,27 @@
-import './App.css';
+import { useState } from 'react'
+import { generateMnemonic } from 'bip39'
+import { EthWallet } from './components/eth';
+
 
 
 function App() {
+  const [mnemonic, setMnemonic] = useState("");
+
+  let genMnemonic = async () =>{
+    let mnemonic = await generateMnemonic();
+    console.log(mnemonic);
+    setMnemonic(mnemonic);
+  }
+
   return (
-    <div className="App">
-      <h1>Crypto Wallet!</h1>
-      
-    </div>
-  );
+    <>
+      <button onClick={genMnemonic}>Generate Mnemonic</button>
+      <div>
+        {mnemonic && <p>{mnemonic}</p>}
+      </div>
+      <EthWallet mnemonic={mnemonic} />
+    </>
+  )
 }
 
-export default App;
+export default App
