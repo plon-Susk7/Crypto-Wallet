@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@solana/web3.js": "^1.95.3",
     "bip39": "^3.1.0",
     "ethers": "^6.13.2",
+    "micro-ed25519-hdkey": "^0.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vite-plugin-node-polyfills": "^0.22.0"
